@@ -2,7 +2,8 @@
 
 ### Sistema de organização de tarefas Kanban
 
-*Features Planejadas*
+**Features Planejadas**
+
 | Feature | Status |
 | --- | --- | --- |
 | Adicionar tarefas | A Fazer |
