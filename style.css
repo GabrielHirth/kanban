@@ -1,0 +1,10 @@
+h1{
+    color: rgb(34, 107, 150);
+    text-align: left;
+    font-size: 36px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 6);
+};
+
+tr{
+    color: rgb(184, 19, 19);
+};
