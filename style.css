@@ -8,39 +8,33 @@
   --espacamento: 20px;
   --arredondamento: 10px;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: arial, sans-serif;
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
   min-height: 100px;
 }
-
 header {
   background-color: var(--cor-texto);
   padding: 30px;
   text-align: center;
 }
-
 h1 {
   color: var(--cor-card);
   font-size: 20px;
   font-weight: 600;
   letter-spacing: 1px;
 }
-
 main {
   display: flex;
   justify-content: center;
   padding: 30px;
 }
-
 section {
   background-color: var(--cor-card);
   border-radius: 12px;
@@ -50,50 +44,84 @@ section {
   max-width: 500px;
 }
 
+.add-task {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.add-task input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: inherit;
+}
+.add-task input:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+}
+.add-task button {
+  background-color: var(--cor-primaria);
+  color: var(--cor-card);
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+.add-task button:hover {
+  background-color: var(--cor-primaria-escura);
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
 }
-
 thead th {
   text-align: left;
   padding: 30px;
-  border-bottom: 3px solid var(--cor-texto);
-  font-size: 15px;
-  text-transform: uppercase;
-  letter-spacing: 5px;
+  border-bottom: 3.5px solid var(--cor-texto);
+  font-size: 20px;
+  letter-spacing: 6px;
   color: var(--cor-texto);
 }
-
 tbody tr {
   border-bottom: 1px solid var(--cor-fundo);
   transition: background-color 0.2s ease;
 }
-
 tbody tr:hover {
   background-color: var(--cor-fundo);
 }
-
 tbody tr:last-child {
   border-bottom: none;
 }
-
 td {
   padding: 20px;
   font-size: 20px;
 }
-
 td:first-child {
   font-weight: 500;
 }
 
-td:nth-child(2) {
-  color: var(--cor-primaria-escura);
+tr.concluida td:first-child {
+  text-decoration: line-through;
+  color: var(--cor-texto-secundario);
+  font-weight: 400;
 }
 
-button[type="one"] {
+#empty-message td {
+  text-align: center;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--cor-texto-secundario);
+  padding: 30px;
+}
+
+.complete-btn {
   background: none;
-  border: 1px solid var(--cor-card);
+  border: 1px solid #ddd;
   border-radius: 6px;
   padding: 10px;
   cursor: pointer;
@@ -102,76 +130,7 @@ button[type="one"] {
     transform 0.15s ease,
     border-color 0.15s ease;
 }
-
-button[type="one"]:hover {
-  border-color: #22c55e;
-  transform: scale(1.1);
-}
-
-button[type="two"] {
-  background: none;
-  border: 1px solid var(--cor-card);
-  border-radius: 6px;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 15px;
-  transition:
-    transform 0.15s ease,
-    border-color 0.15s ease;
-}
-
-button[type="two"]:hover {
-  border-color: #22c55e;
-  transform: scale(1.1);
-}
-
-button[type="tree"] {
-  background: none;
-  border: 1px solid var(--cor-card);
-  border-radius: 6px;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 15px;
-  transition:
-    transform 0.15s ease,
-    border-color 0.15s ease;
-}
-
-button[type="tree"]:hover {
-  border-color: #22c55e;
-  transform: scale(1.1);
-}
-
-button[type="four"] {
-  background: none;
-  border: 1px solid var(--cor-card);
-  border-radius: 6px;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 15px;
-  transition:
-    transform 0.15s ease,
-    border-color 0.15s ease;
-}
-
-button[type="four"]:hover {
-  border-color: #22c55e;
-  transform: scale(1.1);
-}
-
-button[type="five"] {
-  background: none;
-  border: 1px solid var(--cor-card);
-  border-radius: 6px;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 15px;
-  transition:
-    transform 0.15s ease,
-    border-color 0.15s ease;
-}
-
-button[type="five"]:hover {
+.complete-btn:hover {
   border-color: #22c55e;
   transform: scale(1.1);
 }
@@ -180,9 +139,16 @@ button[type="five"]:hover {
   section {
     padding: 20px;
   }
-  td,
+  td
   thead th {
     padding: 10px;
     font-size: 20px;
   }
+}
+
+
+.finished {
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
